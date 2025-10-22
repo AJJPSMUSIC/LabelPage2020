@@ -40,7 +40,31 @@ $(document).ready(function(){
     });
 });
 
+document.addEventListener('DOMContentLoaded', function() {
+    const header = document.querySelector('.header');
+    const themeLight = document.querySelector('.theme-selector .light');
+    const themeDark = document.querySelector('.theme-selector .dark');
+    const themeVideo = document.querySelector('.theme-selector .video');
 
+    // Set default theme to video
+    let theme = localStorage.getItem('theme') || 'video';
+    header.setAttribute('data-theme', theme);
+
+    themeLight.addEventListener('click', function() {
+        header.setAttribute('data-theme', 'light');
+        localStorage.setItem('theme', 'light');
+    });
+
+    themeDark.addEventListener('click', function() {
+        header.setAttribute('data-theme', 'dark');
+        localStorage.setItem('theme', 'dark');
+    });
+
+    themeVideo.addEventListener('click', function() {
+        header.setAttribute('data-theme', 'video');
+        localStorage.setItem('theme', 'video');
+    });
+});
 
 // smooth scroll
 $(document).ready(function(){
