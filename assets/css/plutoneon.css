@@ -11535,6 +11535,7 @@ a:hover {
   transition: .2s;
   -webkit-transition-timing-function: linear;
           transition-timing-function: linear;
+	  z-index: 0;
 }
 
 .header-video {
